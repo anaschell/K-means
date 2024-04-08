@@ -6,7 +6,7 @@ class KMeans:
         self.max_iteration = max_iteration
 
     def fit(self, test_data):
-        centre = test_data[np.random.choice(range(len(test_data)), self.nombre_clusters, replace=False)]
+        centre = test_data[:self.nombre_clusters]
         
         for _ in range(self.max_iteration):
             distance_pt_centre = np.linalg.norm(test_data[:, np.newaxis] - centre, axis=2)
